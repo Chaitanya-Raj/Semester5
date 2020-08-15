@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <script>
+      function validateForm() {
+        let name = document.getElementById("name").value;
+        let rollno = document.getElementById("rollno").value;
+        let dob = document.getElementById("dob").value;
+        console.log(name, rollno, dob);
+        if (name === "" || rollno === "" || dob === "")
+          alert("fields must not be blank");
+        else if (!name.match(/[a-zA-Z]*/)) alert("the name must be a string");
+        else if (!rollno.match(/[0-9]{7}/))
+          alert("rollno must be 7 digits long and have only numbers");
+        else alert(`${name}, ${rollno}, ${dob}`);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Student Registration Form</h1>
+    <form
+      action=""
+      method="post"
+      onsubmit="validateForm(); event.preventDefault(); "
+    >
+      <label for="name">Name : </label>
+      <input type="text" name="name" id="name" />
+      <br />
+      <br />
+      <label for="rollno">Roll No. : </label>
+      <input type="text" name="rollno" id="rollno" />
+      <br />
+      <br />
+      <label for="dob">Date of Birth : </label>
+      <input type="date" name="dob" id="dob" />
+      <br />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
