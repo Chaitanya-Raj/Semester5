@@ -608,7 +608,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 3 ".\\hello.l"
-printf("good bye!");
+printf("Goodbye!");
 	YY_BREAK
 case 2:
 YY_RULE_SETUP

@@ -1,6 +1,6 @@
 %option noyywrap
 %%
-"hello" printf("good bye!");
+"hello" printf("Goodbye!");
 . ;
 %%
 int main()
