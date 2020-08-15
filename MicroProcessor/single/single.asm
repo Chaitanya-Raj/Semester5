@@ -5,8 +5,8 @@
 .CODE
 
 .STARTUP
-mov DX, 'c'
-mov AH, 2
+MOV DX, 'a'
+MOV AH, 2
 int 21H
 
 .EXIT

@@ -1,7 +1,7 @@
 .MODEL small
 
 .DATA
-var1 DB "CHAITANYA $"
+var1 DB "HELLO $"
 
 .CODE
 

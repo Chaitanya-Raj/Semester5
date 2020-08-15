@@ -1,15 +1,15 @@
 .MODEL small
 
 .DATA
-var1 DB "CHAITANYA $"
+var1 DB "Yo!! $"
 
 .CODE
 
 .STARTUP
-mov AX, @data
-mov DX, AX
-mov DX, OFFSET var1
-mov AH, 9
+MOV AX, @DATA
+MOV DX, AX
+MOV DX, OFFSET var1
+MOV AH, 9
 int 21H
 
 .EXIT
