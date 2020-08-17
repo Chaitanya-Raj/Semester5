@@ -1,0 +1,7 @@
+%option noyywrap
+%%
+%%
+int main()
+{
+    yylex();
+}

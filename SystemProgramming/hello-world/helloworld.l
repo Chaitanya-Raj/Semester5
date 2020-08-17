@@ -1,7 +1,6 @@
 %option noyywrap
 %%
-"hello" printf("Goodbye!");
-. ;
+.*\n printf("Hello World!");
 %%
 int main()
 {
