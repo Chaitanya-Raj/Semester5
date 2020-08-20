@@ -1,8 +1,8 @@
 %option noyywrap
 %%
-.*\n printf("Hello World!");
 %%
 int main()
 {
+    printf("Hello World!");
     yylex();
 }
