@@ -1,1 +1,6 @@
 Practice
+*.txt
+*.png
+*.exe
+*.obj
+lex.yy.c

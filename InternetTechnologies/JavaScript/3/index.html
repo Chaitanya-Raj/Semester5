@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Sort</title>
+  </head>
+  <body>
+    <form>
+      <label id="text">Number of elements :</label>
+      <input type="number" name="size" id="size" />
+      <input type="button" value="submit" />
+    </form>
+    <script>
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        let size = document.getElementById("size").value;
+        let arr = new Array(size);
+        for (let i = 0; i < size; i++)
+          arr[i] = parseInt(prompt(`Enter the ${i + 1} element : `));
+        for (let i = 0; i < size; i++) {
+          for (let j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              let temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        document.writeln("After bubble sort : ");
+        for (let i = 0; i < size; i++) {
+          document.writeln(arr[i]);
+        }
+      });
+    </script>
+  </body>
+</html>

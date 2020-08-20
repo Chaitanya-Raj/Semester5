@@ -4,28 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Registration Form</title>
+    <style>
+      * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      label,
+      input,
+      button {
+        font-size: 2rem;
+      }
+    </style>
     <script>
       function validateForm() {
         let name = document.getElementById("name").value;
         let rollno = document.getElementById("rollno").value;
         let dob = document.getElementById("dob").value;
+        var Days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        var Months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        var date = new Date(dob);
         console.log(name, rollno, dob);
+
         if (name === "" || rollno === "" || dob === "")
           alert("fields must not be blank");
         else if (!name.match(/[a-zA-Z]*/)) alert("the name must be a string");
         else if (!rollno.match(/[0-9]{7}/))
           alert("rollno must be 7 digits long and have only numbers");
-        else alert(`${name}, ${rollno}, ${dob}`);
+        else
+          alert(
+            `Name : ${name} \nRoll No. : ${rollno} \nDate of Birth : ${
+              Days[date.getDay()] +
+              ", " +
+              Months[date.getMonth()] +
+              " " +
+              date.getDate() +
+              ", " +
+              dob.substr(0, 4)
+            }`
+          );
       }
     </script>
   </head>
   <body>
     <h1>Student Registration Form</h1>
-    <form
-      action=""
-      method="post"
-      onsubmit="validateForm(); event.preventDefault(); "
-    >
+    <form method="post" onsubmit="validateForm(); event.preventDefault(); ">
       <label for="name">Name : </label>
       <input type="text" name="name" id="name" />
       <br />
