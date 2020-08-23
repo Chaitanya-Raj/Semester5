@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Password Protection</title>
+  </head>
+  <body>
+    <p id="login"></p>
+    <script type="text/javascript">
+      var user = prompt("Enter Username");
+      var pass = prompt("Enter Password");
+      if (user === null || pass === null || user === "" || pass === "")
+        alert("One or more values missing");
+      else if (user == "chaitanya" && pass == "123456") {
+        document.getElementById("login").innerHTML = `Welcome ${user}!`;
+      } else {
+        alert("Invalid Credentials");
+      }
+    </script>
+  </body>
+</html>
