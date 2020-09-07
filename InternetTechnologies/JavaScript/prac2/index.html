@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Series Sum</title>
+    <style>
+      * {
+        font-size: 1.2rem;
+      }
+    </style>
+    <script language="javascript">
+      const series = () => {
+        const input = document.getElementById("input").value;
+        if (input.length != 0) {
+          if (input.match(/^[0-9]+$/)) {
+            let sum = 0;
+            for (let i = 1; i < input * 2; i += 2) sum += i / (i + 1);
+            document.write(sum);
+          } else alert("Input a valid number!!");
+        } else alert("No value specified");
+      };
+    </script>
+  </head>
+  <body>
+    Enter the number of elements of the series 1/2 + 3/4 + 5/6 + 7/8... to sum
+    over :
+    <br /><br />
+    <input type="text" name="input" id="input" /><br /><br />
+    <input type="button" name="but" value="Submit" onclick="series();" />
+  </body>
+</html>

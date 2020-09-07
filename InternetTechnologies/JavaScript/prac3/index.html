@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Question 3</title>
+  </head>
+
+  <body>
+    <img src="test.png" ondblclick="askAge();" />
+    <script language="javascript">
+      function askAge() {
+        let age = prompt("Enter your age");
+        if (age.match(/^[0-9]+$/)) document.write("Your age is " + age);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 5</title>
+  </head>
+  <body>
+    <h2>Text Color Change</h2>
+    <div id="text" style="color: black; font-size: 35px">
+      Yo, This text gonna change its color!!
+    </div>
+    <h2>Moving Image</h2>
+    <img id="move" src="test.jpg" style="transform: translate(0px, 0px)" />
+    <br />
+    <script type="text/javascript">
+      const box = document.getElementById("text");
+      const move = document.getElementById("move");
+      let x = 10;
+      setTimeout(() => {
+        box.style.color = "green";
+      }, 3000);
+
+      setInterval(() => {
+        move.style.transform = `translate(${x}px, 0px)`;
+        x += 3;
+      }, 50);
+    </script>
+  </body>
+</html>
