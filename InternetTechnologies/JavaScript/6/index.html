@@ -17,7 +17,7 @@
 
     <form method="POST">
       <h4><input type="text" id="fname" style="height: 20px" /> First Name</h4>
-      <h4><input type="text" id="lname" style="height: 20px" /> Lname Name</h4>
+      <h4><input type="text" id="lname" style="height: 20px" /> Last Name</h4>
       <h4>
         <input type="email" id="email" style="height: 20px" /> Email Address
       </h4>
@@ -25,113 +25,115 @@
       <h4><input type="text" id="city" style="height: 20px" /> City</h4>
       <h4>
         <input type="text" id="state" style="width: 60px" />State
-        <input type="number" id="code" style="width: 60px" />Postal Code
+        <input type="text" id="code" style="width: 60px" />Postal Code
         <input type="text" id="country" style="width: 60px" /> Country
       </h4>
-      <i>Please choose the most approriate statements</i>
-      <h6>
+      <i>Please choose the most appropriate statements</i>
+      <p>
         <input
           type="radio"
           id="1"
           name="choice"
           value="I regularly purchase items online"
         />I regularly purchase items online
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="radio"
           id="2"
           name="choice"
           value="I have on occasion purchased items online"
         />I have on occasion purchased items online
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="radio"
           id="3"
           name="choice"
           value="I have not purchased anything online,but I would consider it"
         />I have not purchased anything online,but I would consider it
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="radio"
           id="4"
           name="choice"
           value="I prefer to shop in real stores"
         />I prefer to shop in real stores
-      </h6>
+      </p>
+      <br />
       <i>I'm interested in (choose all that apply)</i>
-      <h6>
+      <p>
         <input type="checkbox" name="interest" value="Hiking" multiple />Hiking
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="checkbox"
           name="interest"
           value="Mountain Biking"
           multiple
         />Mountain Biking
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="checkbox"
           name="interest"
           value="Camping"
           multiple
         />Camping
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="checkbox"
           name="interest"
           value="Rock Climbing"
           multiple
         />Rock Climbing
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="checkbox"
           name="interest"
           value="Off-Road 4WD"
           multiple
         />Off-Road 4WD
-      </h6>
-      <h6>
+      </p>
+      <p>
         <input
           type="checkbox"
           name="interest"
           value="Cross-Country SKiing"
           multiple
-        />Cross-Country SKiing
-      </h6>
+        />Cross-Country Skiing
+      </p>
+      <br />
 
-      <i>I learned about this site from</i>
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+      <i>I learned about this site from</i><br />
+      <select name="source" id="source">
+        <option value="print">PrintAds</option>
+        <option value="television">Television</option>
+        <option value="friend">Friend</option>
       </select>
+      <br />
 
       <h5>Comments</h5>
 
-      <textarea rows="6" cols="30" id="comm">
-Please type any comments here</textarea
-      >
+      <textarea
+        rows="6"
+        cols="30"
+        id="comm"
+        placeholder="Please type any comments here"
+      ></textarea>
       <br />
-      <input
-        id="sub"
-        type="button"
-        value="Submit"
-        onclick="validate();"
-        style="width: 60px"
-      /><input type="button" value="StartOver" />
+      <button id="sub" type="submit" style="width: 60px">Submit</button>
+      <button type="reset">Start Over</button>
+      <br />
       <p id="check"></p>
     </form>
 
     <script type="text/javascript">
-      function validate() {
+      document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
         var rbs = document.getElementsByName("choice");
         let selectedValue;
         for (const rb of rbs) {
@@ -149,7 +151,7 @@ Please type any comments here</textarea
           }
         }
 
-        var sel = document.getElementById("cars").value;
+        var sel = document.getElementById("source").value;
         var fname = document.getElementById("fname").value;
         var lname = document.getElementById("lname").value;
         var email = document.getElementById("email").value;
@@ -159,29 +161,43 @@ Please type any comments here</textarea
         var code = document.getElementById("code").value;
         var country = document.getElementById("country").value;
 
-        document.getElementById("check").innerHTML =
-          fname +
-          "<br>" +
-          lname +
-          "<br>" +
-          email +
-          "<br>" +
-          address +
-          "<br>" +
-          city +
-          "<br>" +
-          state +
-          "<br>" +
-          code +
-          "<br>" +
-          country +
-          "<br>" +
-          selectedValue +
-          "<br>" +
-          cbselect +
-          "<br>" +
-          sel;
-      }
+        if (
+          sel &&
+          fname &&
+          lname &&
+          email &&
+          address &&
+          city &&
+          state &&
+          code &&
+          country
+        ) {
+          document.getElementById("check").innerHTML =
+            fname +
+            "<br>" +
+            lname +
+            "<br>" +
+            email +
+            "<br>" +
+            address +
+            "<br>" +
+            city +
+            "<br>" +
+            state +
+            "<br>" +
+            code +
+            "<br>" +
+            country +
+            "<br>" +
+            selectedValue +
+            "<br>" +
+            cbselect +
+            "<br>" +
+            sel;
+        } else {
+          alert("Please fill the form!");
+        }
+      });
     </script>
   </body>
 </html>
