@@ -32,8 +32,8 @@ op [\+|\-|\*|\/]
 int main(){
     yylex();
     if(flag==0)
-        printf("Valid arithmatic expression:");
+        printf("Valid arithmatic expression");
     else
-        printf("Invalid arithmatic expression:");
+        printf("Invalid arithmatic expression");
     return 0;
 }
