@@ -1591,12 +1591,13 @@ yyreturn:
 
 void main()
 {
- printf("\n Enter an arithmetic expression having +, -, *, \\, \% or () :\n");
+ printf("\n Enter any Airthmetic Expression which can have operations Addition,Subtraction,Multiplication,Division,Modulous and round Brackets;\n");
  yyparse();
- printf("\nValid Expression\n");
+ printf("\nEntered Arithmetic Expression is valid\n");
 }
 
 void yyerror(const char *str)
 {
-printf("Invalid Expression : %s\n\n",str);
+printf("Invalid Expression: %s\n\n",str);
 }
+
