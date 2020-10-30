@@ -14,7 +14,7 @@ id {letter}({letter}|{digit})*
 "int"|"main"|"return"|"float"|"char"|"case"|"default"|"if"|"else"|"then"|"while"|"for"|"printf"|"scanf"|"cout"|"cin" {printf("%s is a keyword\n", yytext);}
 {id} {printf("%s is an identifier\n", yytext);count++;}
 
-"int"|"float"|"<="|"=="|"="|"++"|"-"|"*"|"+"|"<"|">"|["][^"]+["]|[(){},;] {printf("%s is an operator\n", yytext); }
+"<="|"=="|"="|"++"|"-"|"*"|"+"|"<"|">"|["][^"]+["]|[(){},;] {printf("%s is an operator\n", yytext); }
 "//".+ {printf("%sSingle Line Comment\n",yytext);}
 
 "/*"([^*]|(\*[^/]))*"*"+"/" {printf("%sMulti Line Comment\n",yytext);}

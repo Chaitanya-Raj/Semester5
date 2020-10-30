@@ -1,8 +1,4 @@
 %option noyywrap
-%{
-    #include<stdio.h>
-    #include<stdlib.h>
-%}
 
 %%
 "float" { fprintf(yyout, "double"); }

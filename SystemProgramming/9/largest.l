@@ -1,7 +1,6 @@
 %option noyywrap
 
 %{
-	#include<stdio.h>
 	#include<string.h>
 	int len = 0;
 	char *largest;
